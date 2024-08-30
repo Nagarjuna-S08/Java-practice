@@ -11,14 +11,27 @@ package com.mycompany.pc1;
 public class Pc1 {
 
     public static void main(String[] args) {
-      String a="hello";
-      String b="naga";
-      a=a+b;
       
-      b=a.substring(0, a.length()-b.length());
-      a=a.substring(b.length());
-      System.out.println("a="+a+" b="+b);
+      System.out.println(isPerfectSquare(2147483647));
       
-      
+    }
+    
+    public static boolean isPerfectSquare(int num) {
+        int str=1,end=num/2;
+
+        while(str <= end){
+            int mid= str+(end-str)/2;
+
+            if(mid*mid==num){
+                return true;
+            }
+            if(mid*mid > num){
+                end=mid-1;
+            }
+            else{
+                str=mid+1;
+            }
+        }
+        return false;
     }
 }
